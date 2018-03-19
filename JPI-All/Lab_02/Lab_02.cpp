@@ -1,16 +1,6 @@
 //
 // Created by adrja on 10.03.2018.
 //
-//TODO:
-//Program generujący i zapisujący liczby do pliku (NxM), N - linii, M - liczb w każdej linii.
-//Gdzie w pierwszej linii będą dostępne wartości N i M.
-//np. dla N=3 M=4
-//3 4
-//1 2 13 4
-//5 16 7 8
-//9 11 21 9
-//Program wczytujący liczby z pliku (powyżej) do tablicy dwuwymiarowej.
-
 
 #include "Lab_02.h"
 
