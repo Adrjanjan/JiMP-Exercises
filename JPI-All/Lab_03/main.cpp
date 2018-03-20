@@ -15,7 +15,7 @@ int main() {
 
         for (auto &pkt : a_punkty) {
             pkt.setVal(random() % 100, random() % 100, random() % 100);
-            pkt.setIdent(std::to_string());
+            pkt.setIdent(std::to_string(char(65 + rand() % 27)));
 
             if (pkt.getOdleglosc0() > max) {
                 max = pkt.getOdleglosc0();
