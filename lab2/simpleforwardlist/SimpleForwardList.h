@@ -7,7 +7,7 @@
 
 typedef struct flist{
     struct flist * next;
-    int data;
+    int value;
 } ForwardList;
 
 ForwardList *CreateNode(int value);
