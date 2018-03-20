@@ -4,35 +4,41 @@
 
 #include "GreatestProduct.h"
 
-
 int max(int x1, int x2) {
-    return x1>x2 ? x1 : x2;
+    return x1 > x2 ? x1 : x2;
 }
 
 int GreatestProduct(const std::vector<int> &numbers, int k) {
-    if (!numbers.empty()) {
+    if (numbers.empty()) {
         return 0;
     }
+    std::vector<int> new_vector(numbers);
+    int result = 1;
+    sort(new_vector.begin(), new_vector.end());
 
-    std::vector<int> another_vector {};
-    int min1 = numbers[0], min2 = numbers[0], max1 = numbers[0], max2 = numbers[0];
-
-    for (auto num : numbers) {
-
-        if (num >= max1) {
-            max1=num;
-            if (num > max2) {
-                max1 = max2;
-                max2 = num;
-            }
-        } else if (num <= min1) {
-            min1=num;
-            if (num < min2) {
-                min1=min2;
-                min2 = num;
-            }
+    if (k % 2 && new_vector[new_vector.size() - 1] <= 0) {
+        for (int i = 1; i <= k; ++i) {
+            result *= new_vector[new_vector.size() - 1];
+            new_vector.pop_back();
         }
+    } else {
+        int positive_mul, negative_mul;
+        while (k > 1) {
+            negative_mul = new_vector[0] * new_vector[1];
+            positive_mul = new_vector[new_vector.size() - 1] * new_vector[new_vector.size() - 2];
 
+            if (negative_mul > positive_mul) {
+                result *= negative_mul;
+                new_vector.erase(new_vector.begin(), new_vector.begin() + 1);
+            } else {
+                result *= positive_mul;
+                new_vector.erase(new_vector.end() - 1, new_vector.end());
+            }
+            k -= 2;
+        }
     }
-    return max(min2 * min1, max2 * max1);
+
+    if (k == 1) result *= max(new_vector[new_vector.size() - 1], new_vector[new_vector.size() - 2]);
+
+    return result;
 }

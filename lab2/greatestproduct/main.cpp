@@ -3,10 +3,14 @@
 //
 
 #include "GreatestProduct.h"
-
+#include <algorithm>
 int main() {
 
-    std::cout<<GreatestProduct()
+    std::vector<int> i = {-11, -90, -4, -5, -9, -1, -3, -1};
+
+    std::cout << GreatestProduct(i, 3);
+
 
     return 0;
 }
+
