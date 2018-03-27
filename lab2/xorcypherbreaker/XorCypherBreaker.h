@@ -6,6 +6,7 @@
 #define JIMP_EXERCISES_XORCYPHERBREAKER_H
 
 #include <string>
+#include <algorithm>
 #include <vector>
 
 std::string XorCypherBreaker(const std::vector<char> &cryptogram,
