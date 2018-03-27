@@ -14,7 +14,6 @@ macro(add_subdirectory_if_exists DIR)
     endif ()
 endmacro(add_subdirectory_if_exists)
 
-add_subdirectory(JPI-All)
 add_subdirectory(lab1)
 add_subdirectory(lab2)
 add_subdirectory(lab3)
