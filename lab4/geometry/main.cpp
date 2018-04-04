@@ -6,9 +6,11 @@
 #include <vector>
 #include <iostream>
 #include <sstream>
+
 #include "Point.h"
 
 using namespace std;
+using ::geometry::Point;
 
 int main() {
 //wywołuje konstruktor domyślny
