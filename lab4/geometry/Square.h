@@ -5,6 +5,9 @@
 #ifndef JIMP_EXERCISES_SQUARE_H
 #define JIMP_EXERCISES_SQUARE_H
 
+#include "Point.h"
+#include <array>
+
 namespace geometry {
 
     class Square {

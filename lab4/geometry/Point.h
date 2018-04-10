@@ -5,6 +5,8 @@
 #ifndef JIMP_EXERCISES_POINT_H
 #define JIMP_EXERCISES_POINT_H
 
+#include <ostream>
+
 namespace geometry {
 
     class Point {

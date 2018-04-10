@@ -3,27 +3,29 @@
 //
 
 #include "Point.h"
+#include "Square.h"
+#include <cmath>
+#include <iostream>
+
+using ::std::cout;
+using ::std::endl;
+using ::std::ostream;
 
 namespace geometry {
-    std::array<Point, 4> Square::GetPoints() {
-        return vertexes_;
-    }
-
-    Square::~Square() = default;
 
     Point::Point() : x_(0), y_(0) {
-        cout << "Konstruktor bezparametrowy" << endl;
+        //cout << "Konstruktor bezparametrowy" << endl;
     }
 
     Point::Point(double x, double y) {
-        cout << "Konstruktor parametrowy" << endl;
+        //cout << "Konstruktor parametrowy" << endl;
         x_ = x;
         y_ = y;
     }
 
     Point::~Point() {
-        cout << "Destruktor! Nic nie robie, bo nie musze zwalniać pamięci! " << x_ << " , " << y_;
-        cout << endl;
+        //cout << "Destruktor! Nic nie robie, bo nie musze zwalniać pamięci! " << x_ << " , " << y_;
+        //cout << endl;
     }
 
     double Point::Distance(const Point &other) const {

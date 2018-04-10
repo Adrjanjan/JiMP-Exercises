@@ -10,6 +10,7 @@
 #include <StringUtility.h>
 #include <Square.h>
 
+
 using ::geometry::Point;
 using ::geometry::Square;
 using ::std::make_unique;

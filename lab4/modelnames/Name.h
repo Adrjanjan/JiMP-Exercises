@@ -13,6 +13,7 @@ namespace model {
     using ::std::string;
     using ::std::stringstream;
     using ::std::experimental::optional;
+    using ::std::experimental::make_optional;
 
     class Name {
     public:
