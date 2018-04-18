@@ -10,17 +10,29 @@
 #include <experimental/string_view>
 #include <set>
 
-class TextPool {
+namespace pool {
+    class TextPool {
 
 //    Rule of Five (z usuniętą możliwością kopiowania)
 //    domyślny konstruktor
 //    konstruktor z listą inicjalizacyjną
+    public:
+        TextPool();
 
-    std::experimental::string_view Intern(const std::string &str);
+        TextPool(TextPool &&other);
 
-    size_t StoredStringCount() const;
+        TextPool(const std::initializer_list<std::experimental::string_view> &pool);
 
-};
+        TextPool &operator=(TextPool &&other);
 
+        //zwraca uchwyt (iterator) do łańcucha z pool_ jeżeli juz tam jest lub dodaje go i zwraca nowy, jeżeli nie ma
+        std::experimental::string_view Intern(const std::string &str);
+
+        size_t StoredStringCount() const;
+
+    private:
+        std::set<std::experimental::string_view> pool_;
+    };
+}
 
 #endif //JIMP_EXERCISES_TEXTPOOL_H
