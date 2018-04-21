@@ -10,7 +10,6 @@
 #include <StringUtility.h>
 #include <Square.h>
 
-
 using ::geometry::Point;
 using ::geometry::Square;
 using ::std::make_unique;
@@ -40,10 +39,10 @@ TEST_P(SquareTests, ProperSquares) {
 }
 
 std::vector<TestParam> squareTestData{
-        {TestArgument{Point {0, 1}, Point {0, 0}, Point {1, 1}, Point {1, 0}}, {4.0, 1.0}},
-        {TestArgument{Point {0, 5}, Point {0, 0}, Point {5, 5}, Point {5, 0}}, {20.0, 25.0}},
-        {TestArgument{Point {-1, 0}, Point {0, -1}, Point {0, 1}, Point {1, 0}}, {4.0 * sqrt(2.0), 2.0}},
-        {TestArgument{Point {0, 1}, Point {0, 0}, Point {1, 1}, Point {3, 0}}, {0.0, 0.0}},
+        {TestArgument{Point{0, 1}, Point{0, 0}, Point{1, 1}, Point{1, 0}},   {4.0,             1.0}},
+        {TestArgument{Point{0, 5}, Point{0, 0}, Point{5, 5}, Point{5, 0}},   {20.0,            25.0}},
+        {TestArgument{Point{-1, 0}, Point{0, -1}, Point{0, 1}, Point{1, 0}}, {4.0 * sqrt(2.0), 2.0}},
+        {TestArgument{Point{0, 1}, Point{0, 0}, Point{1, 1}, Point{3, 0}},   {0.0,             0.0}},
 };
 
 INSTANTIATE_TEST_CASE_P(SquareTestsFixture,
