@@ -32,5 +32,3 @@ add_subdirectory(lab11)
 add_subdirectory(lab12)
 add_subdirectory(lab13)
 add_subdirectory(tests)
-add_subdirectory(example)
-
