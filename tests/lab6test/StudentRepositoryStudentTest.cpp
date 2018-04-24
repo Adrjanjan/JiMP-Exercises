@@ -40,7 +40,7 @@ TEST_F(StudentRepositoryStudentTests, IsAbleToCreateNonDefaultStudent) {
 
 }
 
-TEST_F(StudentRepositoryStudentTests, IsAbleToCompateTwoStudents) {
+TEST_F(StudentRepositoryStudentTests, IsAbleToCompareTwoStudents) {
 
   Student s {"2035", "Orson", "Sabach", "górnictwo", 2};
   Student s2 {"2035", "Orson", "Sabach", "górnictwo", 2};

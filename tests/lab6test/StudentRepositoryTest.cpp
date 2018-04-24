@@ -78,7 +78,7 @@ TEST_F(StudentRepositoryTests, IsAbleToRetriveStudentByIdAndModifyItsStateInRepo
 }
 
 
-TEST_F(StudentRepositoryTests, IsAbleToCompateTwoRepositories) {
+TEST_F(StudentRepositoryTests, IsAbleToCompareTwoRepositories) {
 
   StudentRepository repository
       {{"2030", "Michał", "Karak", "architektura", 5}, {"2031", "Katarzyna", "Bach", "informatyka", 3},
