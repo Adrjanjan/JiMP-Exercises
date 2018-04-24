@@ -14,6 +14,8 @@ using std::vector;
 using std::string;
 using std::pair;
 using std::literals::string_literals::operator ""s;
+using ::datastructures::Zipper;
+using ::datastructures::ZipperIterator;
 
 int foo(const vector<string> &v1, const vector<int> &v2) {
     for (const pair<string, int> &p : Zipper::zip(v1, v2)) {
@@ -49,14 +51,14 @@ int main() {
 
     //Przykład z zipperem
     for (const auto &p : Zipper::zip(vs, vi)) {
-        cout << p.second << " is " << p.first;
+        cout << p.second << " is " << p.first << endl;
     }
-    cout << endl;
+    cout << endl << endl;
     //to samo bez auto:
     for (const pair<string, int> &p : Zipper::zip(vs, vi)) {
         cout << p.second << " is " << p.first;
     }
-    cout << endl;
+    cout << endl << endl;
 
     //przetłumaczony powyższa petla mniej wiecej tak jak to kompilator
     //rozumie:
@@ -65,6 +67,7 @@ int main() {
         const pair<string, int> &p = *it;
         cout << p.second << " is " << p.first;
     }
-    cout << endl;
-
+    cout << endl << endl;
+    cout << "foo" << endl;
+    cout << foo(vs, vi) << endl;
 }

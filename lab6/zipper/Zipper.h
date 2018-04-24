@@ -5,27 +5,38 @@
 #ifndef JIMP_EXERCISES_ZIPPER_H
 #define JIMP_EXERCISES_ZIPPER_H
 
-namespace datastructures {
+#include <string>
+#include <vector>
 
+namespace datastructures {
+    using ::std::string;
+    using ::std::pair;
+    using ::std::vector;
 
     class ZipperIterator {
     public:
-        pair<string, int> operator*() const; //wmagane w linii 74
-        ZipperIterator &operator++(); //wymagane w linii 73 for(_;_;TU)
-        bool operator!=(const ZipperIterator &other) const; //wymagane w linii 73 for(_;TU;_)
+        ZipperIterator(std::vector<std::string>::iterator is, std::vector<int>::iterator ii);
+
+        pair<string, int> operator*() const;
+
+        ZipperIterator &operator++();
+
+        bool operator!=(const ZipperIterator &other) const;
+
     private:
-        //TODO
+        std::pair<std::vector<std::string>::iterator, std::vector<int>::iterator> zipped_it_;
     };
 
-//umożliwia przeglądanie dwóch wektorów na raz, w jednej pętli range-for
     class Zipper {
     public:
-        static Zipper zip(const vector <string> &vs, const vector<int> &vi);
+        static Zipper zip(const vector<string> &vs, const vector<int> &vi);
 
-        ZipperIterator begin(); //wymagane w linii 73 for(TU;_;_)
-        ZipperIterator end(); //wymagane w linii 73 for(_;TU;_)
+        ZipperIterator begin();
+
+        ZipperIterator end();
+
     private:
-        //TODO
+        std::pair<std::vector<std::string>, std::vector<int>> zipped_;
     };
 }
 
