@@ -1,9 +1,9 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="File '...\tests\lab4test\SquareTest.cpp [Wypych]'" />
-    <option name="defaultScopeName" value="File '...\tests\lab4test\SquareTest.cpp [Wypych]'" />
-    <option name="localWholeWordsOnly" value="true" />
-    <option name="LOCAL_WHOLE_WORDS_ONLY" value="true" />
-    <option name="SEARCH_SCOPE" value="File '...\tests\lab4test\SquareTest.cpp [Wypych]'" />
+    <option name="customScope" value="File '...\lab5\matrix\Matrix.cpp'" />
+    <option name="defaultScopeName" value="File '...\lab5\matrix\Matrix.cpp'" />
+    <option name="localCaseSensitive" value="true" />
+    <option name="LOCAL_CASE_SENSITIVE_SEARCH" value="true" />
+    <option name="SEARCH_SCOPE" value="File '...\lab5\matrix\Matrix.cpp'" />
   </component>
 </application>
