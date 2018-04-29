@@ -1,0 +1,14 @@
+//
+// Created by adrja on 27.04.2018.
+//
+
+#ifndef JIMP_EXERCISES_STUDENTREPOSITORYQUERIES_H
+#define JIMP_EXERCISES_STUDENTREPOSITORYQUERIES_H
+
+
+class StudentRepositoryQueries {
+
+};
+
+
+#endif //JIMP_EXERCISES_STUDENTREPOSITORYQUERIES_H
