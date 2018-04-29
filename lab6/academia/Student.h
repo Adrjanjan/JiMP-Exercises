@@ -19,15 +19,15 @@ namespace academia {
 
         friend bool operator==(const Student &l, const Student &r);
 
-        std::string Id();
+        std::string Id() const;
 
-        std::string FirstName();
+        std::string FirstName() const;
 
-        std::string LastName();
+        std::string LastName() const;
 
-        std::string Program();
+        std::string Program() const;
 
-        StudyYear Year();
+        StudyYear Year() const;
 
         void Id(const std::string &);
 
