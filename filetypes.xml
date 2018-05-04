@@ -1,9 +1,0 @@
-<application>
-  <component name="FileTypeManager" version="17">
-    <extensionMap>
-      <mapping pattern="lab2_4.tex" type="Native" />
-      <mapping pattern="asd" type="PLAIN_TEXT" />
-      <mapping ext="md" type="PLAIN_TEXT" />
-    </extensionMap>
-  </component>
-</application>
