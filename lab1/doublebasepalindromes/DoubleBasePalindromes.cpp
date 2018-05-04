@@ -3,6 +3,7 @@
 //
 
 #include "DoubleBasePalindromes.h"
+#include "Palindrome.h"
 
 std::string int_to_binary(int number){
 
@@ -13,18 +14,6 @@ std::string int_to_binary(int number){
         number /=2;
     }
     return binary;
-}
-
-bool is_palindrome(std::string str){
-
-    unsigned long int i=0, j = str.length()-1;
-
-    while( i < str.length() / 2){
-        if(str[i++] != str[j--]){
-            return false;
-        }
-    }
-    return true;
 }
 
 uint64_t DoubleBasePalindromes(int max_vaule_exculsive){

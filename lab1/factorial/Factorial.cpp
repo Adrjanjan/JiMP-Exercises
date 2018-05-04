@@ -3,7 +3,7 @@
 //
 #include "Factorial.h"
 
-int factorial_rec(int value) {
+int factorial(int value) {
   if (value == 0) {
     return 1;
   } else if (value > 0) {

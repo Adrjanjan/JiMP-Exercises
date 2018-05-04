@@ -4,13 +4,13 @@
 
 #include "ReverseString.h"
 
-std::string StringReverse(std::string str){
+std::string reverse(std::string str) {
     std::string buffer;
 
     if(str.length()==0){
         return "\0";
     }
-    buffer = str.back() + StringReverse(str.substr(0, str.length() - 1));
+    buffer = str.back() + reverse(str.substr(0, str.length() - 1));
 
     return buffer;
 }

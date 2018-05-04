@@ -8,7 +8,7 @@
 
 #include <string>
 
-std::string StringReverse(std::string str);
+std::string reverse(std::string str);
 
 
 
