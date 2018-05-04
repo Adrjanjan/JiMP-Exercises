@@ -62,7 +62,8 @@ std::string nets::JsonValue::ToString() const {
                 temp += "\": " + i.second.ToString() + ", ";
             }
             temp.pop_back();
-            temp[temp.end()[-1]] = '}';
+            temp.pop_back();
+            temp += '}';
             break;
         }
         default:
