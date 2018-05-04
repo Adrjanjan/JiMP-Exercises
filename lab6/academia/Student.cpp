@@ -66,5 +66,9 @@ bool academia::operator==(const Student &l, const Student &r) {
            l.first_name_ == r.first_name_ &&
            l.last_name_ == r.last_name_ &&
            l.program_ == r.program_ &&
-           l.year_ == r.year_;
+           l.year_.GetYear() == r.year_.GetYear();
+}
+
+bool academia::operator<(const Student &l, const Student &r) {
+    return l.Id() < r.Id();
 }
