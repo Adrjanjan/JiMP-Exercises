@@ -7,4 +7,6 @@
 
 int CountIntToIntFactorial(int value);
 
+int factorial(int value);
+
 #endif //JIMP_EXERCISES_FACTORIAL_H

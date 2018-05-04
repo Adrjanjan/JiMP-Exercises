@@ -10,4 +10,5 @@ target_include_directories(libstudentrepository PUBLIC .)
 add_executable(studentrepository ${SOURCE_FILES} main.cpp)
 
 target_link_libraries(studentrepository libstudentrepository)
+target_link_libraries(libstudentrepository libstudentrepositoryqueries)
 

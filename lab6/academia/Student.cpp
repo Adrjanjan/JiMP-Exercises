@@ -21,23 +21,23 @@ Student::Student(std::string id,
         year_(year) {}
 
 
-std::string academia::Student::Id() {
+std::string academia::Student::Id() const {
     return id_;
 }
 
-std::string academia::Student::FirstName() {
+std::string academia::Student::FirstName() const {
     return first_name_;
 }
 
-std::string academia::Student::LastName() {
+std::string academia::Student::LastName() const {
     return last_name_;
 }
 
-std::string academia::Student::Program() {
+std::string academia::Student::Program() const {
     return program_;
 }
 
-academia::StudyYear academia::Student::Year() {
+academia::StudyYear academia::Student::Year() const {
     return year_;
 }
 
@@ -66,5 +66,9 @@ bool academia::operator==(const Student &l, const Student &r) {
            l.first_name_ == r.first_name_ &&
            l.last_name_ == r.last_name_ &&
            l.program_ == r.program_ &&
-           l.year_ == r.year_;
+           l.year_.GetYear() == r.year_.GetYear();
+}
+
+bool academia::operator<(const Student &l, const Student &r) {
+    return l.Id() < r.Id();
 }

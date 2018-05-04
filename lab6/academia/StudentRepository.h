@@ -6,8 +6,10 @@
 #define JIMP_EXERCISES_STUDENTREPOSITORY_H
 
 #include <vector>
+#include <memory>
 #include "StudyYear.h"
 #include "Student.h"
+#include "StudentRepositoryQueries.h"
 
 
 namespace academia {
@@ -23,6 +25,8 @@ namespace academia {
         friend bool operator==(const StudentRepository &l, const StudentRepository &r);
 
         Student &operator[](std::string student_id);
+
+        std::vector<Student> FindByQuery(std::unique_ptr<Query> query);
 
     private:
         std::vector<Student> students_;

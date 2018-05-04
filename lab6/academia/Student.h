@@ -19,15 +19,17 @@ namespace academia {
 
         friend bool operator==(const Student &l, const Student &r);
 
-        std::string Id();
+        friend bool operator<(const Student &l, const Student &r);
 
-        std::string FirstName();
+        std::string Id() const;
 
-        std::string LastName();
+        std::string FirstName() const;
 
-        std::string Program();
+        std::string LastName() const;
 
-        StudyYear Year();
+        std::string Program() const;
+
+        StudyYear Year() const;
 
         void Id(const std::string &);
 
@@ -45,6 +47,8 @@ namespace academia {
     };
 
     bool operator==(const Student &l, const Student &r);
+
+    bool operator<(const Student &l, const Student &r);
 }
 
 #endif //JIMP_EXERCISES_STUDENT_H
