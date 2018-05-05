@@ -13,19 +13,14 @@ namespace utility {
     class Iterable {
     public:
         virtual std::unique_ptr<IterableIterator> ConstBegin() const =0;
-
         virtual std::unique_ptr<IterableIterator> ConstEnd() const =0;
 
         IterableIteratorWrapper cbegin() const;
-
         IterableIteratorWrapper cend() const;
-
         IterableIteratorWrapper begin() const;
-
         IterableIteratorWrapper end() const;
 
-    private:
-        std::unique_ptr<IterableIteratorWrapper> iterator_ptr_;
+        std::pair<std::vector<int>, std::vector<std::string>> vectors_;
     };
 
     class Enumerate : public Iterable {
@@ -33,11 +28,7 @@ namespace utility {
         explicit Enumerate(const std::vector<std::string> &vs);
 
         std::unique_ptr<IterableIterator> ConstBegin() const override;
-
         std::unique_ptr<IterableIterator> ConstEnd() const override;
-
-    private:
-        const std::vector<std::string> &vs_;
     };
 
     class Product : public Iterable {
@@ -45,12 +36,7 @@ namespace utility {
         Product(const std::vector<int> &vi, const std::vector<std::string> &vs);
 
         std::unique_ptr<IterableIterator> ConstBegin() const override;
-
         std::unique_ptr<IterableIterator> ConstEnd() const override;
-
-    private:
-        const std::vector<int> &vi_;
-        const std::vector<std::string> &vs_;
     };
 
     class Zipper : public Iterable {
@@ -58,12 +44,7 @@ namespace utility {
         Zipper(const std::vector<int> &vi, const std::vector<std::string> &vs);
 
         std::unique_ptr<IterableIterator> ConstBegin() const override;
-
         std::unique_ptr<IterableIterator> ConstEnd() const override;
-
-    private:
-        const std::vector<int> &vi_;
-        const std::vector<std::string> &vs_;
     };
 
 }
