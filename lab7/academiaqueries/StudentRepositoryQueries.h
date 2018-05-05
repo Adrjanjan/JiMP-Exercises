@@ -82,4 +82,5 @@ namespace academia {
     };
 }
 
+
 #endif //JIMP_EXERCISES_STUDENTREPOSITORYQUERIES_H

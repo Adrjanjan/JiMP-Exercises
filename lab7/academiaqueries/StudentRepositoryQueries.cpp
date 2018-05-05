@@ -26,19 +26,15 @@ bool academia::ByYearLowerOrEqualTo::Accept(const academia::Student &student) co
     return student.Year().GetYear() <= year_.GetYear();
 }
 
-academia::OrQuery::OrQuery(std::unique_ptr<academia::Query> left, std::unique_ptr<academia::Query> right) : left_(
-        std::move(left)),
-                                                                                                            right_(std::move(
-                                                                                                                    right)) {}
+academia::OrQuery::OrQuery(std::unique_ptr<academia::Query> left, std::unique_ptr<academia::Query> right) :
+        left_(std::move(left)), right_(std::move(right)) {}
 
 bool academia::OrQuery::Accept(const academia::Student &student) const {
     return left_->Accept(student) || right_->Accept(student);
 }
 
-academia::AndQuery::AndQuery(std::unique_ptr<academia::Query> left, std::unique_ptr<academia::Query> right) : left_(
-        std::move(left)),
-                                                                                                              right_(std::move(
-                                                                                                                      right)) {}
+academia::AndQuery::AndQuery(std::unique_ptr<academia::Query> left, std::unique_ptr<academia::Query> right) :
+        left_(std::move(left)), right_(std::move(right)) {}
 
 bool academia::AndQuery::Accept(const academia::Student &student) const {
     return left_->Accept(student) && right_->Accept(student);
