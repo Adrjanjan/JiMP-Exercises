@@ -5,26 +5,39 @@
 #ifndef JIMP_EXERCISES_PESEL_H
 #define JIMP_EXERCISES_PESEL_H
 
+#include <string>
+#include <stdexcept>
+
 namespace academia {
 
     class Pesel {
+    public:
+        Pesel(std::string pesel);
 
+        bool validatePESEL(const std::string pesel);
+
+    private:
+        std::string pesel_;
     };
 
-    class InvalidPeselChecksum {
-
+    class AcademiaDataValidationError : public std::invalid_argument {
+    public:
+        AcademiaDataValidationError(const std::string &message);
     };
 
-    class InvalidPeselLength {
-
+    class InvalidPeselChecksum : public AcademiaDataValidationError {
+    public:
+        InvalidPeselChecksum(const std::string &pesel, int sum);
     };
 
-    class InvalidPeselCharacter {
-
+    class InvalidPeselLength : public AcademiaDataValidationError {
+    public:
+        InvalidPeselLength(const std::string &pesel, int length);
     };
 
-    class AcademiaDataValidationError {
-
+    class InvalidPeselCharacter : public AcademiaDataValidationError {
+    public:
+        InvalidPeselCharacter(const std::string &pesel);
     };
 }
 
