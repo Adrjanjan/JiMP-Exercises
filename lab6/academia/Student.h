@@ -49,6 +49,31 @@ namespace academia {
     bool operator==(const Student &l, const Student &r);
 
     bool operator<(const Student &l, const Student &r);
+
+    class AcademiaDataValidationError : public std::invalid_argument {
+    public:
+        explicit AcademiaDataValidationError(const std::string &message);
+    };
+
+    class InvalidNameSurname : public AcademiaDataValidationError {
+    public:
+        InvalidNameSurname(const std::string &name, const std::string &surname)
+    };
+
+    class InvalidNameCharacters : public AcademiaDataValidationError {
+    public:
+        explicit InvalidNameCharacters(const std::string &name)
+    };
+
+    class InvalidAge : public AcademiaDataValidationError {
+    public:
+        explicit InvalidAge(const size_t &age);
+    };
+
+    class InvalidProgram : public AcademiaDataValidationError {
+    public:
+        explicit InvalidProgram(const std::string &program)
+    };
 }
 
 #endif //JIMP_EXERCISES_STUDENT_H

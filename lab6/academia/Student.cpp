@@ -20,6 +20,17 @@ Student::Student(std::string id,
         program_(std::move(program)),
         year_(year) {}
 
+//// przynajmniej imię i nazwisko
+//// każdy człon imienia i nazwiska z Wielskiej litery i pozostałe małe
+//// Imię nie może zawierać znaków cyfr specjalnych
+//// WIek studenta w Zakresie 10-100 lar
+//// kierunek studiów z zakresu {"informatyka", "ekonomia", "matematyka","fizyka","filozofia"}
+//// nazwy wyjątków
+//// - InvalidNameSurname
+//// - InvalidNameCharacters
+//// - InvalidAge
+//// - InvalidProgram
+//// dopisać main wstawiający poprawnie skonstuowanych studentów do repozytorium
 
 std::string academia::Student::Id() const {
     return id_;
@@ -71,4 +82,20 @@ bool academia::operator==(const Student &l, const Student &r) {
 
 bool academia::operator<(const Student &l, const Student &r) {
     return l.Id() < r.Id();
+}
+
+academia::InvalidNameSurname::InvalidNameSurname(const std::string &name, const std::string &surname)
+        : AcademiaDataValidationError(
+        "Can't create student's with wrong name:" + name + " or surnname: " + surname + ".") {}
+
+academia::InvalidNameCharacters::InvalidNameCharacters(const std::string &name)
+        : AcademiaDataValidationError("Can't create student's name with wrong chars: " + name + " .") {}
+
+academia::InvalidAge::InvalidAge(const size_t &age)
+        : AcademiaDataValidationError(
+        "Can't create student with age out of rescricted bounds (10-100):" + std::to_string(age)) {}
+
+academia::InvalidProgram::InvalidProgram(const std::string &program)
+        : AcademiaDataValidationError("Can't create student with wrong program:" + program + ".") {}
+
 }
