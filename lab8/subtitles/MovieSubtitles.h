@@ -58,12 +58,34 @@ namespace moviesubs {
     public:
         void ShiftAllSubtitlesBy(int offset_in_micro_seconds, int frame_per_second, std::istream *in,
                                  std::ostream *out) override;
-        /* INDEX NEW_LINE
-         * TIME_IN → TIME_OFF NEW_LINE
-         * SUBTITLE1 NEW_LINE
-         * SUBTITLE2 NEW_LINE NEW_LINE
+
+    private:
+
+        class TimeHandler {
+        public:
+            TimeHandler(int hours, int minutes, int seconds, int microseconds);
+
+            std::string to_string() const;
+
+            TimeHandler &AddMiliseconds(int other);
+
+            bool operator>(const TimeHandler &other) const;
+
+            bool operator<(int other) const;
+
+        private:
+            int microseconds_;
+        };
+
+
+        std::regex capture_point_pattern_{
+                R"(([0-9]+)\n([0-9]+):([0-9]+):([0-9]+),([0-9]+) --> ([0-9]+):([0-9]+):([0-9]+),([0-9]+)\n((.*)\n(.*)?\n?\n))"};
+        /* INDEX \n - 1
+         * HH:MM:SS,mmm(TIME_IN)--> HH:MM:SS,mmm(TIME_OFF) \n - 2,3,4,5 --> 6,7,8,9
+         * SUBTITLE1 \n - 11
+         * SUBTITLE2 \n\n - 12
+         *
          * gdzie INDEX - to numer klatki,
-         * NEW_LINE to znak nowej linii,
          * TIME_IN i TIME_OFF to moment pojawienia się i zniknięcia klatki
          * w formacie HH:MM:SS,mmm (godzina:minuta:sekundy,milisekundy).
          * Napisy mogą być wielolinijkowe, nowa klatka pojawia się po pustej linii.*/
