@@ -21,3 +21,7 @@ void academia::Building::Serialize(Serializer *serializer) const {
     serializer->ArrayField("rooms", rooms_);
     serializer->Footer("building");
 }
+
+int academia::Building::Id() const {
+    return id_;
+}

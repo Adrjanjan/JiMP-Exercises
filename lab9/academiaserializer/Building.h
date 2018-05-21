@@ -15,6 +15,8 @@ namespace academia {
 
         void Serialize(Serializer *serializer) const override;
 
+        int Id() const;
+
     private:
         int id_;
         std::string name_;
